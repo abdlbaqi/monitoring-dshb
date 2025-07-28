@@ -41,9 +41,10 @@ Route::middleware('auth')->group(function () {
 
     // Rambu
     Route::get('/rambu', [RambuController::class, 'index'])->name('rambu.index');
+    Route::get('/rambu/create', [RambuController::class, 'create'])->name('rambu.create');
     Route::get('/rambu/{rambu}', [RambuController::class, 'show'])->name('rambu.show');
     Route::middleware('can:admin-only')->group(function () {
-        Route::get('/rambu/create', [RambuController::class, 'create'])->name('rambu.create');
+
         Route::post('/rambu', [RambuController::class, 'store'])->name('rambu.store');
         Route::get('/rambu/{rambu}/edit', [RambuController::class, 'edit'])->name('rambu.edit');
         Route::put('/rambu/{rambu}', [RambuController::class, 'update'])->name('rambu.update');

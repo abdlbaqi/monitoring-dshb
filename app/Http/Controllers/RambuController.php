@@ -26,20 +26,20 @@ class RambuController extends Controller
         $jalans = Jalan::all();
         $jenisRambu = ['Peringatan', 'Larangan', 'Perintah', 'Petunjuk'];
 
-        return view('rambu.index', compact('rambus', 'jalans', 'jenisRambu'));
+        return view('admin.rambu.index', compact('rambus', 'jalans', 'jenisRambu'));
     }
 
     public function create()
     {
-        $this->authorize('admin-only');
+
         $jalans = Jalan::all();
         $jenisRambu = ['Peringatan', 'Larangan', 'Perintah', 'Petunjuk'];
-        return view('rambu.create', compact('jalans', 'jenisRambu'));
+        return view('admin.rambu.create', compact('jalans', 'jenisRambu'));
     }
 
     public function store(Request $request)
     {
-        $this->authorize('admin-only');
+
         
         $validated = $request->validate([
             'jalan_id' => 'required|exists:jalan,id',
