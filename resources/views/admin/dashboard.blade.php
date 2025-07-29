@@ -4,6 +4,19 @@
 @section('page-title', 'Dashboard Infrastruktur Jalan')
 
 @section('content')
+
+<!-- Informasi Indikator Kinerja -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="alert alert-secondary shadow-sm" role="alert">
+            <h5 class="fw-bold mb-2"><i class="bi bi-info-circle-fill"></i> Indikator Kinerja Dinas Perhubungan</h5>
+            <p class="mb-0">
+                Indikator kinerja Dinas Perhubungan adalah ukuran atau parameter yang digunakan untuk menilai tingkat pencapaian sasaran dan tujuan program di bidang perhubungan, sebagaimana diatur dalam dokumen perencanaan pembangunan daerah berdasarkan <strong>Permendagri Nomor 86 Tahun 2017</strong>. Indikator ini digunakan untuk mengukur keberhasilan pelaksanaan kegiatan secara <strong>efektif</strong>, <strong>efisien</strong>, dan <strong>terukur</strong>.
+            </p>
+        </div>
+    </div>
+</div>
+
 <!-- Statistics Cards -->
 <div class="row mb-4">
     <div class="col-xl-2 col-md-4 col-sm-6 mb-3">

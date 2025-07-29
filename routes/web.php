@@ -53,9 +53,10 @@ Route::middleware('auth')->group(function () {
 
     // Marka
     Route::get('/marka', [MarkaController::class, 'index'])->name('marka.index');
+    Route::get('/marka/create', [MarkaController::class, 'create'])->name('marka.create');
     Route::get('/marka/{marka}', [MarkaController::class, 'show'])->name('marka.show');
     Route::middleware('can:admin-only')->group(function () {
-        Route::get('/marka/create', [MarkaController::class, 'create'])->name('marka.create');
+        
         Route::post('/marka', [MarkaController::class, 'store'])->name('marka.store');
         Route::get('/marka/{marka}/edit', [MarkaController::class, 'edit'])->name('marka.edit');
         Route::put('/marka/{marka}', [MarkaController::class, 'update'])->name('marka.update');

@@ -21,14 +21,14 @@ class MarkaController extends Controller
         $markas = $query->paginate(10);
         $jalans = Jalan::all();
 
-        return view('marka.index', compact('markas', 'jalans'));
+        return view('admin.marka.index', compact('markas', 'jalans'));
     }
 
     public function create()
     {
         $this->authorize('admin-only');
         $jalans = Jalan::all();
-        return view('marka.create', compact('jalans'));
+        return view('admin.marka.create', compact('jalans'));
     }
 
     public function store(Request $request)
@@ -63,14 +63,14 @@ class MarkaController extends Controller
 
         public function show(Marka $marka)
     {
-        return view('marka.show', compact('marka'));
+        return view('admin.marka.show', compact('marka'));
     }
 
     public function edit(Marka $marka)
     {
         $this->authorize('admin-only');
         $jalans = Jalan::all();
-        return view('marka.edit', compact('marka', 'jalans'));
+        return view('admin.marka.edit', compact('marka', 'jalans'));
     }
 
     public function update(Request $request, Marka $marka)
