@@ -65,9 +65,10 @@ Route::middleware('auth')->group(function () {
 
     // Guardrail
     Route::get('/guardrail', [GuardrailController::class, 'index'])->name('guardrail.index');
+    Route::get('/guardrail/create', [GuardrailController::class, 'create'])->name('guardrail.create');
     Route::get('/guardrail/{guardrail}', [GuardrailController::class, 'show'])->name('guardrail.show');
     Route::middleware('can:admin-only')->group(function () {
-        Route::get('/guardrail/create', [GuardrailController::class, 'create'])->name('guardrail.create');
+        
         Route::post('/guardrail', [GuardrailController::class, 'store'])->name('guardrail.store');
         Route::get('/guardrail/{guardrail}/edit', [GuardrailController::class, 'edit'])->name('guardrail.edit');
         Route::put('/guardrail/{guardrail}', [GuardrailController::class, 'update'])->name('guardrail.update');

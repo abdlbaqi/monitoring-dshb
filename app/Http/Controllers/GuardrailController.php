@@ -21,7 +21,7 @@ class GuardrailController extends Controller
         $guardrails = $query->paginate(10);
         $jalans = Jalan::all();
 
-        return view('guardrail.index', compact('guardrails', 'jalans'));
+        return view('admin.guardrail.index', compact('guardrails', 'jalans'));
     }
 
     public function create()
@@ -29,7 +29,7 @@ class GuardrailController extends Controller
         $this->authorize('admin-only');
         $jalans = Jalan::all();
         $tipeGuardrail = ['Baja', 'Beton', 'Kawat'];
-        return view('guardrail.create', compact('jalans', 'tipeGuardrail'));
+        return view('admin.guardrail.create', compact('jalans', 'tipeGuardrail'));
     }
 
     public function store(Request $request)
@@ -63,7 +63,7 @@ class GuardrailController extends Controller
 
     public function show(Guardrail $guardrail)
     {
-        return view('guardrail.show', compact('guardrail'));
+        return view('admin.guardrail.show', compact('guardrail'));
     }
 
     public function edit(Guardrail $guardrail)
@@ -71,7 +71,7 @@ class GuardrailController extends Controller
         $this->authorize('admin-only');
         $jalans = Jalan::all();
         $tipeGuardrail = ['Baja', 'Beton', 'Kawat'];
-        return view('guardrail.edit', compact('guardrail', 'jalans', 'tipeGuardrail'));
+        return view('admin.guardrail.edit', compact('guardrail', 'jalans', 'tipeGuardrail'));
     }
 
     public function update(Request $request, Guardrail $guardrail)
